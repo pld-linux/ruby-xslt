@@ -19,10 +19,10 @@ BuildRequires:	zlib-devel >= 1.2.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-xslt bingings for ruby
+Ruby-xslt is a simple XSLT class based on libxml (xmlsoft.org) and libxslt (xmlsoft.org/XSLT).
 
 %description -l pl.UTF-8
-dowiązania xslt dla ruby`ego
+Prosta klasa transformacji XSL oparta na libxml (xmlsoft.org) oraz libxslt (xmlsoft.org/XSLT).
 
 %prep
 %setup -q -n %{name}
@@ -51,10 +51,3 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{ruby_rubylibdir}/xml
 %attr(755,root,root) %{ruby_archdir}/xml/*.so
 %dir %{ruby_archdir}/xml
-
-%post
-%banner %{name}-%{version} << EOF
-********************************************************************************
-*     ruby-xslt documentation in: %{_docdir}/%{name}-%{version}/index.html     *
-********************************************************************************
-EOF
