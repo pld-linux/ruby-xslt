@@ -7,7 +7,6 @@ License:	GPL
 Group:		Development/Languages
 Source0:	http://gregoire.lejeune.free.fr/%{name}_%{version}.tar.gz
 # Source0-md5:	f69bf3a70bedbd44f7dee25df20546fd
-
 BuildRequires:	libgcrypt-devel >= 1.2.4
 BuildRequires:	libgpg-error-devel >= 1.4-2
 BuildRequires:	libxml2-devel >= 2.6.27
@@ -15,14 +14,15 @@ BuildRequires:	libxslt-devel >= 1.1.19
 BuildRequires:	rpmbuild(macros) >= 1.277
 BuildRequires:	ruby-devel
 BuildRequires:	zlib-devel >= 1.2.3
-
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Ruby-xslt is a simple XSLT class based on libxml (xmlsoft.org) and libxslt (xmlsoft.org/XSLT).
+Ruby-xslt is a simple XSLT class based on libxml (xmlsoft.org) and
+libxslt (xmlsoft.org/XSLT).
 
 %description -l pl.UTF-8
-Prosta klasa transformacji XSL oparta na libxml (xmlsoft.org) oraz libxslt (xmlsoft.org/XSLT).
+Prosta klasa transformacji XSL oparta na libxml (xmlsoft.org) oraz
+libxslt (xmlsoft.org/XSLT).
 
 %prep
 %setup -q -n %{name}
@@ -39,7 +39,7 @@ install -d $RPM_BUILD_ROOT%{ruby_rubylibdir}/xml
 cp -af lib/xslt.rb $RPM_BUILD_ROOT%{ruby_rubylibdir}/xml
 
 install -d $RPM_BUILD_ROOT%{ruby_archdir}/xml
-cp -af xslt_lib.so $RPM_BUILD_ROOT%{ruby_archdir}/xml
+install xslt_lib.so $RPM_BUILD_ROOT%{ruby_archdir}/xml
 
 %clean
 rm -rf $RPM_BUILD_ROOT
